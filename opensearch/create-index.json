@@ -1,0 +1,150 @@
+{
+  "settings": {
+    "number_of_shards": 1,
+    "number_of_replicas": 0,
+    "analysis": {
+      "analyzer": {
+        "portuguese_analyzer": {
+          "type": "standard",
+          "stopwords": "_portuguese_"
+        }
+      },
+      "normalizer": {
+        "lowercase_normalizer": {
+          "type": "custom",
+          "filter": [
+            "lowercase",
+            "asciifolding"
+          ]
+        }
+      }
+    }
+  },
+  "mappings": {
+    "dynamic": "strict",
+    "properties": {
+      "id": {
+        "type": "long"
+      },
+      "_opensearch_id": {
+        "type": "keyword"
+      },
+      "pubdate": {
+        "type": "date",
+        "format": "strict_date_optional_time||yyyy-MM-dd"
+      },
+      "pubname": {
+        "type": "keyword"
+      },
+      "arttype": {
+        "type": "keyword"
+      },
+      "artcategory": {
+        "type": "text",
+        "analyzer": "portuguese_analyzer",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 2048
+          }
+        }
+      },
+      "identifica": {
+        "type": "text",
+        "analyzer": "portuguese_analyzer",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 2048
+          }
+        }
+      },
+      "assina": {
+        "type": "text",
+        "analyzer": "portuguese_analyzer",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "normalizer": "lowercase_normalizer",
+            "ignore_above": 1024
+          }
+        }
+      },
+      "texto_plain": {
+        "type": "text",
+        "analyzer": "portuguese_analyzer"
+      },
+      "entities": {
+        "properties": {
+          "person": {
+            "type": "text",
+            "analyzer": "portuguese_analyzer",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "normalizer": "lowercase_normalizer",
+                "ignore_above": 1024
+              }
+            }
+          },
+          "organization": {
+            "type": "text",
+            "analyzer": "portuguese_analyzer",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "normalizer": "lowercase_normalizer",
+                "ignore_above": 2048
+              }
+            }
+          },
+          "position": {
+            "type": "text",
+            "analyzer": "portuguese_analyzer",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "normalizer": "lowercase_normalizer",
+                "ignore_above": 1024
+              }
+            }
+          },
+          "position_code": {
+            "type": "keyword",
+            "normalizer": "lowercase_normalizer"
+          },
+          "location": {
+            "type": "text",
+            "analyzer": "portuguese_analyzer",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "normalizer": "lowercase_normalizer",
+                "ignore_above": 1024
+              }
+            }
+          },
+          "process": {
+            "type": "keyword",
+            "normalizer": "lowercase_normalizer"
+          },
+          "registration": {
+            "type": "keyword",
+            "normalizer": "lowercase_normalizer"
+          },
+          "legal_act": {
+            "type": "text",
+            "analyzer": "portuguese_analyzer",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "normalizer": "lowercase_normalizer",
+                "ignore_above": 2048
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

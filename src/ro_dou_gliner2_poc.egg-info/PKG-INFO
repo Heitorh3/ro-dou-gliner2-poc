@@ -1,0 +1,6 @@
+Metadata-Version: 2.4
+Name: ro-dou-gliner2-poc
+Version: 0.5.0
+Requires-Python: >=3.11
+Requires-Dist: gliner2
+Requires-Dist: pyyaml

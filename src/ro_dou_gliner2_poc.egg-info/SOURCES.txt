@@ -1,0 +1,9 @@
+README.md
+pyproject.toml
+src/ro_dou_gliner/__init__.py
+src/ro_dou_gliner/extractor.py
+src/ro_dou_gliner2_poc.egg-info/PKG-INFO
+src/ro_dou_gliner2_poc.egg-info/SOURCES.txt
+src/ro_dou_gliner2_poc.egg-info/dependency_links.txt
+src/ro_dou_gliner2_poc.egg-info/requires.txt
+src/ro_dou_gliner2_poc.egg-info/top_level.txt
