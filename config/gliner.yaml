@@ -1,6 +1,7 @@
 gliner:
   enabled: true
   model: fastino/gliner2.5-multi-v1
+  revision: 2ca71aafb3446d9014e1c55c7ff51c9bc7209c47 # by hugging face
   threshold: 0.45
   max_len: null
   include_confidence: true

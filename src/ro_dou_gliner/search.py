@@ -9,7 +9,7 @@ from opensearchpy import OpenSearch
 
 from .extractor import GlinerExtractor
 
-DEFAULT_INDEX = "rodou-gliner-benchmark"
+DEFAULT_INDEX = "rodou-gliner"
 
 ENTITY_BOOSTS = {
     "person": 5.0,

@@ -8,7 +8,7 @@ Exemplo:
     uv run python index_documents.py \
         output/opensearch-documents.jsonl \
         --host http://localhost:9200 \
-        --index rodou-gliner-benchmark
+        --index rodou-gliner
 """
 
 from __future__ import annotations
@@ -20,7 +20,7 @@ from typing import Any
 
 from opensearchpy import OpenSearch, helpers
 
-DEFAULT_INDEX = "rodou-gliner-benchmark"
+DEFAULT_INDEX = "rodou-gliner"
 
 
 def parse_args() -> argparse.Namespace:
